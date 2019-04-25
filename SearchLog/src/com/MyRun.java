@@ -46,7 +46,7 @@ public class MyRun implements Runnable {
 		this.lblInfo = lblInfo;
 	}	
 	
-	//поиск файла и слова
+	//РџРѕРёСЃРє СЃР»РѕРІ РІ С„Р°Р№Р»Рµ
 	private void SearchFiles(File Dir) throws Exception   {		
 		
 		File[] listfolder = Dir.listFiles();
@@ -82,7 +82,7 @@ public class MyRun implements Runnable {
 		}
 	}	
 	
-	//вывод результата
+	//Р—Р°РїСѓСЃРє РїРѕС‚РѕРєР°
 	@Override
 	public void run()  {		
 			
@@ -102,11 +102,9 @@ public class MyRun implements Runnable {
 		
 		if(comboboxItems.size() == 0)
 		{
-			JOptionPane.showMessageDialog(null, "Не найдено файла с заданным словом");
+			JOptionPane.showMessageDialog(null, "РЅРµС‚ С„Р°Р№Р»РѕРІ СЃ Р·Р°РґР°РЅРЅРѕР№ СЃС‚СЂР°РєРѕР№");
 		}else
-		{	
-			System.out.println(comboboxItems+"  asjdkjas");
-			
+		{						
 			DefaultComboBoxModel<String> model = new DefaultComboBoxModel<String>(comboboxItems);
 			ComboBoxDirectFile.setModel(model);
 			
@@ -126,6 +124,7 @@ public class MyRun implements Runnable {
 		}			
 	}	
 	
+	//Р’С‹РІРѕРґ С‚РµРєСЃС‚Р° С„Р°Р№Р»Р°
 	private void SetTextArea(String file, TextArea textArea)
 	{
 		try {
@@ -137,7 +136,7 @@ public class MyRun implements Runnable {
 			
 			 while((line = bufread.readLine())!= null)
 			 {
-			 	builder.append(line+" \n ");								
+			 	builder.append(line+" \n");								
 			 }
 			 
 			 textArea.setText(builder.toString());
