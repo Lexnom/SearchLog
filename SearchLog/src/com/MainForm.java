@@ -70,7 +70,7 @@ public class MainForm {
 		frame.setBounds(100, 100, 960, 578);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLocationRelativeTo(null);
-		frame.setTitle("�����");
+		frame.setTitle("Поиск в логах");
 		GridBagLayout gridBagLayout = new GridBagLayout();
 		gridBagLayout.columnWidths = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 51, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 		gridBagLayout.rowHeights = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -85,7 +85,7 @@ public class MainForm {
 		gbc_verticalGlue_1.gridy = 1;
 		frame.getContentPane().add(verticalGlue_1, gbc_verticalGlue_1);
 		
-		JLabel label = new JLabel("\u0421\u043B\u043E\u0432\u043E:");
+		JLabel label = new JLabel("Строка:");
 		GridBagConstraints gbc_label = new GridBagConstraints();
 		gbc_label.insets = new Insets(0, 0, 5, 5);
 		gbc_label.anchor = GridBagConstraints.SOUTHEAST;
@@ -104,7 +104,7 @@ public class MainForm {
 		frame.getContentPane().add(tfsv, gbc_textField);
 		tfsv.setColumns(10);
 		
-		JLabel label_1 = new JLabel("\u0412\u044B\u0431\u043E\u0440 \u0434\u0438\u0440\u0435\u043A\u0442\u043E\u0440\u0438\u0438:");
+		JLabel label_1 = new JLabel("Выбор директории:");
 		GridBagConstraints gbc_label_1 = new GridBagConstraints();
 		gbc_label_1.anchor = GridBagConstraints.NORTHEAST;
 		gbc_label_1.insets = new Insets(0, 0, 5, 5);
@@ -123,12 +123,12 @@ public class MainForm {
 		frame.getContentPane().add(textAdresDirect, gbc_textAdresDirect);
 		textAdresDirect.setColumns(10);
 		
-		JButton btnOpenDircect = new JButton("\u041E\u0442\u043A\u0434\u0443\u0430 \u0438\u0441\u043A\u0430\u0442\u044C?");
+		JButton btnOpenDircect = new JButton("С чего начнем поиск?");
 		btnOpenDircect.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {									
 					
 					fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-					int result = fileChooser.showDialog(null, "����� ����������");
+					int result = fileChooser.showDialog(null, "Выбор директории");
 					if(result == JFileChooser.APPROVE_OPTION)
 					{
 						textAdresDirect.setText(fileChooser.getSelectedFile()+"");
@@ -159,7 +159,7 @@ public class MainForm {
 		gbc_horizontalGlue.gridy = 3;
 		frame.getContentPane().add(horizontalGlue, gbc_horizontalGlue);
 		
-		JLabel lblendtext = new JLabel("\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043D\u0438\u0435 \u0444\u0430\u0439\u043B\u0430");
+		JLabel lblendtext = new JLabel("Расширение файла:");
 		GridBagConstraints gbc_lblendtext = new GridBagConstraints();
 		gbc_lblendtext.anchor = GridBagConstraints.NORTH;
 		gbc_lblendtext.insets = new Insets(0, 0, 5, 5);
@@ -191,7 +191,7 @@ public class MainForm {
 		 
 		MyThreadPoolExecutor executor = new MyThreadPoolExecutor();
 		
-		JLabel lblinfo = new JLabel("\u0418\u0434\u0435\u0442 \u043F\u043E\u0438\u0441\u043A \u0444\u0430\u0439\u043B\u0430......");
+		JLabel lblinfo = new JLabel("Идет поиск......");
 		GridBagConstraints gbc_lblinfo = new GridBagConstraints();
 		gbc_lblinfo.insets = new Insets(0, 0, 5, 5);
 		gbc_lblinfo.gridx = 20;
@@ -199,7 +199,7 @@ public class MainForm {
 		frame.getContentPane().add(lblinfo, gbc_lblinfo);
 		lblinfo.hide();
 		
-		JButton SearchBtn = new JButton("\u041D\u0430\u0439\u0442\u0438");
+		JButton SearchBtn = new JButton("Найти");
 		SearchBtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {		
 				lblinfo.show();
@@ -263,7 +263,7 @@ public class MainForm {
 		gbc_verticalStrut_1.gridy = 21;
 		frame.getContentPane().add(verticalStrut_1, gbc_verticalStrut_1);
 		
-		JButton btnNext = new JButton("\u0412\u043F\u0435\u0440\u0435\u0434");
+		JButton btnNext = new JButton("Вперед");
 		btnNext.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
@@ -278,12 +278,12 @@ public class MainForm {
 		gbc_btnNext.gridy = 28;
 		frame.getContentPane().add(btnNext, gbc_btnNext);
 		
-		JButton btnBack = new JButton("\u041D\u0430\u0437\u0430\u0434");
+		JButton btnBack = new JButton("Назад");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
 				txtArea.requestFocus();
-				if(CarPos >= 0)
+				if(CarPos >= 1)
 				{
 					txtArea.setCaretPosition(CarPos--);
 				}								
